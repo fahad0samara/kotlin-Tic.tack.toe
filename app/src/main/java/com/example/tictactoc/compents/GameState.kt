@@ -1,8 +1,5 @@
 package com.example.tictactoc.compents
 
-
-
-
 data class GameState(
     val playerCircleCount: Int = 0,
     val playerCrossCount: Int = 0,

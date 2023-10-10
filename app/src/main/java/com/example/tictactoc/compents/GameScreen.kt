@@ -2,7 +2,6 @@ package com.example.tictactoc.compents
 
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.scaleIn
@@ -13,6 +12,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
+
+
 import androidx.compose.material3.Button
 
 
@@ -24,20 +25,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.tictactoc.R
 import com.example.tictactoc.data.GameViewModel
 import com.example.tictactoc.data.UserAction
-import com.example.tictactoc.ui.theme.Blue
+
 import com.example.tictactoc.ui.theme.Gray
+import com.example.tictactoc.ui.theme.Green
 
 
-
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun GameScreen(
     viewModel: GameViewModel,
@@ -61,13 +65,19 @@ fun GameScreen(
             Text(text = "Player 'O' : ${state.playerCircleCount}", fontSize = 16.sp)
             Text(text = "Draw : ${state.drawCount}", fontSize = 16.sp)
             Text(text = "Player 'X' : ${state.playerCrossCount}", fontSize = 16.sp)
+
+
         }
+        val myFont=FontFamily(Font(R.font.bad_script))
         Text(
-            text = "Tic Tac Toe",
-            fontSize = 50.sp,
+            text = stringResource(R.string.tic_tac_toe),
+               fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
-            fontFamily = FontFamily.Cursive,
-            color = Blue
+            fontFamily = myFont,
+            fontStyle = FontStyle.Italic,
+            color=Color.Green
+
+
         )
         Box(
             modifier = Modifier
@@ -150,12 +160,38 @@ fun GameScreen(
                         UserAction.PlayAgainButtonClicked
                     )
                 },
-                shape = RoundedCornerShape(5.dp),
-                elevation = ButtonDefaults.elevatedButtonElevation(5.dp),
-                colors = ButtonDefaults.buttonColors(
+                shape = RoundedCornerShape(topStart = 10.dp, bottomEnd = 10.dp),
+               elevation = ButtonDefaults.buttonElevation(
+                    defaultElevation = 10.dp,
+                    pressedElevation = 20.dp,
+                    disabledElevation = 0.dp,
 
-                    contentColor = Color.White
+
                 ),
+
+
+
+                colors = ButtonDefaults.buttonColors(
+                containerColor = Green,
+                    contentColor = Color.White
+                )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             ) {
                 Text(
                     text = "Play Again",
@@ -165,6 +201,18 @@ fun GameScreen(
 
         }
     }
+}
+
+@Preview
+@Composable
+fun GameScreenr () {
+    GameScreen(
+        viewModel = GameViewModel()
+    )
+
+
+
+
 }
 
 @Composable
@@ -185,10 +233,3 @@ fun DrawVictoryLine(
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun Prev() {
-    GameScreen(
-        viewModel = GameViewModel()
-    )
-}
