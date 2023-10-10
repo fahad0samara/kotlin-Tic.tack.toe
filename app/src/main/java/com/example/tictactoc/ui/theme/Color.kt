@@ -12,5 +12,5 @@ val Pink40 = Color(0xFF7D5260)
 val Aqua = Color(0xFF09BFD8)
 val Oring = Color(0xFFFFEB3B)
 val Gray = Color(0xFF141414)
-val Blue = Color(0xFF3871df)
+
 val Green = Color(0xFF3BEE7C)
