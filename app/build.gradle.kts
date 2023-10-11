@@ -1,4 +1,4 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+
 
 plugins {
     alias(libs.plugins.androidApplication)
@@ -52,7 +52,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx.v251)
     implementation(libs.activity.compose)
@@ -62,6 +62,9 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -1,4 +1,4 @@
-package com.example.tictactoc.compents
+package com.example.tictactoc.screen
 
 
 import androidx.compose.animation.AnimatedVisibility
@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 
@@ -34,18 +35,33 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.tictactoc.R
+import com.example.tictactoc.compents.BoardBase
+import com.example.tictactoc.compents.BoardCellValue
+import com.example.tictactoc.compents.Circle
+import com.example.tictactoc.compents.Cross
+import com.example.tictactoc.compents.GameState
+import com.example.tictactoc.compents.VictoryType
+import com.example.tictactoc.compents.WinDiagonalLine1
+import com.example.tictactoc.compents.WinDiagonalLine2
+import com.example.tictactoc.compents.WinHorizontalLine1
+import com.example.tictactoc.compents.WinHorizontalLine2
+import com.example.tictactoc.compents.WinHorizontalLine3
+import com.example.tictactoc.compents.WinVerticalLine1
+import com.example.tictactoc.compents.WinVerticalLine2
+import com.example.tictactoc.compents.WinVerticalLine3
 import com.example.tictactoc.data.GameViewModel
 import com.example.tictactoc.data.UserAction
-import com.example.tictactoc.ui.theme.Aqua
 
 import com.example.tictactoc.ui.theme.Gray
 import com.example.tictactoc.ui.theme.Green
 
 
 @Composable
-fun GameScreen(
+fun StartScreen(
     viewModel: GameViewModel,
+    navHostController: NavHostController,
 ) {
 
     val state = viewModel.state
@@ -227,8 +243,9 @@ color = Color.Blue
 @Preview
 @Composable
 fun GameScreenr () {
-    GameScreen(
-        viewModel = GameViewModel()
+    StartScreen(
+        viewModel = GameViewModel(),
+        navHostController = NavHostController(LocalContext.current)
     )
 
 
