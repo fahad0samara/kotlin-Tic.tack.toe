@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.sp
 import com.example.tictactoc.R
 import com.example.tictactoc.data.GameViewModel
 import com.example.tictactoc.data.UserAction
+import com.example.tictactoc.ui.theme.Aqua
 
 import com.example.tictactoc.ui.theme.Gray
 import com.example.tictactoc.ui.theme.Green
@@ -52,7 +53,7 @@ fun GameScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Gray)
+            .background(Color.White)
             .padding(horizontal = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly
@@ -62,9 +63,17 @@ fun GameScreen(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "Player 'O' : ${state.playerCircleCount}", fontSize = 16.sp)
-            Text(text = "Draw : ${state.drawCount}", fontSize = 16.sp)
-            Text(text = "Player 'X' : ${state.playerCrossCount}", fontSize = 16.sp)
+            Text(text = "Player 'O' : ${state.playerCircleCount}", fontSize = 16.sp,
+                color = Color(0xFF09BFD8)
+
+                )
+            Text(text = "Draw : ${state.drawCount}", fontSize = 16.sp,
+color = Color.Blue
+                )
+            Text(text = "Player 'X' : ${state.playerCrossCount}", fontSize = 16.sp,
+                color = Color(0xFFFFEB3B)
+
+                )
 
 
         }
@@ -152,8 +161,16 @@ fun GameScreen(
             Text(
                 text = state.hintText,
                 fontSize = 24.sp,
-                fontStyle = FontStyle.Italic
+                fontStyle = FontStyle.Italic,
+                fontWeight = FontWeight.Bold,
+                color =
+                if (state.hasWon) Color.Green else Color.Black
             )
+
+
+
+
+
             Button(
                 {
                     viewModel.onAction(
@@ -194,7 +211,11 @@ fun GameScreen(
 
             ) {
                 Text(
-                    text = "Play Again",
+                    text = if (
+                        state.hasWon || state.drawCount > 0
+                    ) "Play Again" else "Reset",
+                    color = Color.White,
+
                     fontSize = 16.sp
                 )
             }
