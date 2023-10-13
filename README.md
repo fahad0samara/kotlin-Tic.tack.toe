@@ -1,2 +1,1 @@
-# kotlin-Tic.tack.toe
 
