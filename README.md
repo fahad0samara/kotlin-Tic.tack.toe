@@ -16,7 +16,20 @@ This project aims to demonstrate how to create a mobile app for the popular game
 
 ## Screenshots
 
-![Screenshot](/screenshots/screenshot.png)
+<table>
+  <tr>
+      <td><img src="https://github.com/fahad0samara/kotlin-Tic.tack.toe/assets/90055525/787e3eca-3584-4658-81d8-8ca8d82eecd6" alt="Screenshot 4" width="200"/></td>
+    <td><img src="https://github.com/fahad0samara/kotlin-Tic.tack.toe/assets/90055525/490864f1-1ce8-4036-a323-8783fd48e83e" alt="Screenshot 5" width="200"/></td>
+    <td><img src="https://github.com/fahad0samara/kotlin-Tic.tack.toe/assets/90055525/f7d7e542-8736-41f3-a009-e5b7fef22af5" alt="Screenshot 6" width="200"/></td>
+    <td><img src="https://github.com/fahad0samara/kotlin-Tic.tack.toe/assets/90055525/d4b0ed07-e4fc-4370-8b6f-42a9e52c1e3f" alt="Screenshot 1" width="200"/></td>
+    <td><img src="https://github.com/fahad0samara/kotlin-Tic.tack.toe/assets/90055525/88fa62cb-df87-4111-a73e-0954d037993e" alt="Screenshot 2" width="200"/></td>
+
+  </tr>
+  <tr>
+
+  </tr>
+</table>
+
 
 ## Getting Started
 
