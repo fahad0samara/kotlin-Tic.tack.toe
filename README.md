@@ -2,7 +2,9 @@
 
 Welcome to the Kotlin Tic-Tac-Toe project! This is a simple yet fun implementation of the classic Tic-Tac-Toe game built using the Kotlin programming language and Jetpack Compose for Android.
 
-## Screenshots
+
+
+
 
 <table>
   <tr>
@@ -11,6 +13,11 @@ Welcome to the Kotlin Tic-Tac-Toe project! This is a simple yet fun implementati
     <td><img src="https://github.com/fahad0samara/kotlin-Tic.tack.toe/assets/90055525/f7d7e542-8736-41f3-a009-e5b7fef22af5" alt="Screenshot 6" width="200"/></td>
     <td><img src="https://github.com/fahad0samara/kotlin-Tic.tack.toe/assets/90055525/d4b0ed07-e4fc-4370-8b6f-42a9e52c1e3f" alt="Screenshot 1" width="200"/></td>
     <td><img src="https://github.com/fahad0samara/kotlin-Tic.tack.toe/assets/90055525/88fa62cb-df87-4111-a73e-0954d037993e" alt="Screenshot 2" width="200"/></td>
+      </tr>
+  <tr>
+
+  </tr>
+</table>
 
 
 ## Overview
@@ -29,11 +36,7 @@ This project aims to demonstrate how to create a mobile app for the popular game
 
 
 
-  </tr>
-  <tr>
 
-  </tr>
-</table>
 
 
 ## Getting Started
