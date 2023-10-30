@@ -1,4 +1,4 @@
-package com.example.tictactoc.data
+package com.example.tictactoc.model
 
 sealed class UserAction {
     object PlayAgainButtonClicked: UserAction()

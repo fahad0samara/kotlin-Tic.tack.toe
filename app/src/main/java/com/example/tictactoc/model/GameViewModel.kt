@@ -1,6 +1,4 @@
-package com.example.tictactoc.data
-
-import android.app.GameState
+package com.example.tictactoc.model
 
 
 import androidx.compose.runtime.getValue

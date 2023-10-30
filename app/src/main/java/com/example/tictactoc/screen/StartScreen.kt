@@ -51,8 +51,8 @@ import com.example.tictactoc.compents.WinHorizontalLine3
 import com.example.tictactoc.compents.WinVerticalLine1
 import com.example.tictactoc.compents.WinVerticalLine2
 import com.example.tictactoc.compents.WinVerticalLine3
-import com.example.tictactoc.data.GameViewModel
-import com.example.tictactoc.data.UserAction
+import com.example.tictactoc.model.GameViewModel
+import com.example.tictactoc.model.UserAction
 
 import com.example.tictactoc.ui.theme.Gray
 import com.example.tictactoc.ui.theme.Green
