@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.tictactoc.model.GameViewModel
+import com.example.tictactoc.screen.SplashScreen
 import com.example.tictactoc.screen.StartScreen
 
 
@@ -13,8 +14,14 @@ import com.example.tictactoc.screen.StartScreen
 fun MainNavigation() {
     val navHostController= rememberNavController()
 
-    NavHost(navController =navHostController, startDestination = START_SCREEN) {
-        composable(START_SCREEN) {
+    NavHost(navController =navHostController, startDestination = "Splash") {
+        composable("Splash") {
+            SplashScreen(
+                   navHostController
+            )
+        }
+
+        composable("start_screen") {
             val viewModel = viewModel<GameViewModel>()
             StartScreen(
                 viewModel,
@@ -32,6 +39,5 @@ fun MainNavigation() {
 
 
 
-const val START_SCREEN="start_screen"
-const val HOME_SCREEN="home_screen"
-const val CHAT_SCREEN="chat_screen"
+
+

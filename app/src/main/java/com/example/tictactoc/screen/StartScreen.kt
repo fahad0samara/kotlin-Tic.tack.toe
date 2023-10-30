@@ -18,6 +18,7 @@ import androidx.compose.material3.Button
 
 
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -54,8 +55,7 @@ import com.example.tictactoc.compents.WinVerticalLine3
 import com.example.tictactoc.model.GameViewModel
 import com.example.tictactoc.model.UserAction
 
-import com.example.tictactoc.ui.theme.Gray
-import com.example.tictactoc.ui.theme.Green
+import com.example.tictactoc.ui.theme.md_theme_light_primaryContainer
 
 
 @Composable
@@ -69,7 +69,7 @@ fun StartScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
+            .background(MaterialTheme.colorScheme.background)
             .padding(horizontal = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly
@@ -79,14 +79,14 @@ fun StartScreen(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "Player 'O' : ${state.playerCircleCount}", fontSize = 16.sp,
+            Text(text = "Player 'O' : ${state.playerCircleCount}", fontSize = 18.sp,
                 color = Color(0xFF09BFD8)
 
                 )
-            Text(text = "Draw : ${state.drawCount}", fontSize = 16.sp,
-color = Color.Blue
+            Text(text = "Draw : ${state.drawCount}", fontSize = 18.sp,
+color = MaterialTheme.colorScheme.primary
                 )
-            Text(text = "Player 'X' : ${state.playerCrossCount}", fontSize = 16.sp,
+            Text(text = "Player 'X' : ${state.playerCrossCount}", fontSize = 18.sp,
                 color = Color(0xFFFFEB3B)
 
                 )
@@ -100,7 +100,7 @@ color = Color.Blue
             fontWeight = FontWeight.Bold,
             fontFamily = myFont,
             fontStyle = FontStyle.Italic,
-            color=Color.Green
+            color=MaterialTheme.colorScheme.primary
 
 
         )
@@ -113,7 +113,10 @@ color = Color.Blue
                     shape = RoundedCornerShape(20.dp)
                 )
                 .clip(RoundedCornerShape(20.dp))
-                .background(Gray),
+                .background(
+                    color = md_theme_light_primaryContainer,
+                    shape = RoundedCornerShape(20.dp)
+                ),
             contentAlignment = Alignment.Center
         ) {
             BoardBase()
@@ -180,7 +183,7 @@ color = Color.Blue
                 fontStyle = FontStyle.Italic,
                 fontWeight = FontWeight.Bold,
                 color =
-                if (state.hasWon) Color.Green else Color.Black
+                    if (state.hasWon) Color.Green else  MaterialTheme.colorScheme.primary
             )
 
 
@@ -205,34 +208,18 @@ color = Color.Blue
 
 
                 colors = ButtonDefaults.buttonColors(
-                containerColor = Green,
+                containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = Color.White
                 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             ) {
                 Text(
                     text = if (
                         state.hasWon || state.drawCount > 0
                     ) "Play Again" else "Reset",
                     color = Color.White,
+                    fontWeight = FontWeight.Bold,
 
-                    fontSize = 16.sp
+                    fontSize = 14.sp
                 )
             }
 

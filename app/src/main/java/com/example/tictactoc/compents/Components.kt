@@ -14,9 +14,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-import com.example.tictactoc.ui.theme.Aqua
 
-import com.example.tictactoc.ui.theme.Oring
 
 @Composable
 fun BoardBase() {
@@ -64,7 +62,7 @@ fun Circle() {
             .padding(5.dp)
     ) {
         drawCircle(
-            color = Aqua,
+            color = Color(0xFF09BFD8),
             style = Stroke(width = 20f)
         )
     }
@@ -78,14 +76,14 @@ fun Cross() {
             .padding(5.dp)
     ) {
         drawLine(
-            color = Oring,
+            color = Color(0xFFFFEB3B),
             strokeWidth = 20f,
             cap = StrokeCap.Round,
             start = Offset(x = 0f, y = 0f),
             end = Offset(x = size.width, y = size.height)
         )
         drawLine(
-            color = Oring,
+            color = Color(0xFFFFEB3B),
             strokeWidth = 20f,
             cap = StrokeCap.Round,
             start = Offset(x = 0f, y = size.height),
